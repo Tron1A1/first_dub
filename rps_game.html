@@ -1,0 +1,64 @@
+<script>
+
+let userinput=prompt("Entereither of , ROCK,PAPER,SCISSORS");
+userinput=userinput.toUpperCase();
+let computerSelection=Math.random();
+let   computerPlay = () => 
+  {
+      if(computerSelection<=1000){
+          return computerSelection="ROCK"
+      }
+      else if(computerSelection <=2000 && computerSelection >= 1000){
+          return computerSelection="PAPER"
+      }
+      if (computerSelection >= 2000){
+          return computerSelection="SCISSORS"
+      }
+  };
+
+var compare=(choice1,choice2) =>{
+    if (computerSelection === "ROCK" || "PAPER" || "SCISSORS"){
+        if (choice1 === choice2)
+        {
+            return alert("The result is a tie!");
+        }
+
+        else if (choice1 === "ROCK")
+        {
+            if (choice2 === "SCISSORS")
+            {
+                return alert("ROCK crushes SCISSORS!");
+            }
+            else if (choice2 === "PAPER")
+            {
+                return alert("PAPER covers ROCK!");
+            }
+        }
+        if (choice1 === "SCISSORS")
+        {
+            if (choice2 === "ROCK")
+            {
+                return alert("ROCK crushes SCISSORS!");
+            }
+            else if (choice2 === "PAPER")
+            {
+                return alert("SCISSORS cuts PAPER!");
+            }
+        }
+        else if (choice1 === "PAPER")
+        {
+            if (choice2 === "ROCK")
+            {
+                return alert("PAPER covers ROCK!");
+            }
+            else if (choice2 === "SCISSORS")
+            {
+                return alert("SCISSORS cuts PAPER!");
+            }
+        }
+    }
+};
+
+computerPlay();
+compare(userinput,computerSelection);
+</script>
